@@ -4,7 +4,7 @@
   "keywords": ["wordpress", "cache", "request"],
   "homepage": "https://github.com/mitogh/On-Cache-Please",
   "type": "library",
-  "licence": "MIT",
+  "license": "MIT",
   "authors": [
     {
       "name": "Crisoforo Gaspar Hernandez",
