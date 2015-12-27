@@ -35,7 +35,7 @@ class OnCache {
 	public static function please( array $args = array() ) {
 		$args = self::parse_args( $args );
 		if ( ! self::has_valid_( $args ) ) {
-			return new WP_Error( 'broke', 'The arguments are not valid, please verify.' );
+			return new \WP_Error( 'broke', 'The arguments are not valid, please verify.' );
 		}
 
 		$data = get_transient( $args['name'] );
