@@ -1,5 +1,12 @@
 <?php namespace mitogh;
 
+/**
+ * Class that allow to use a callback function to be stored on a transient after
+ * the second time to faster request, allowing the user configure the name and
+ * duration of the transient.
+ *
+ * @since 1.0.0
+ */
 class OnCache {
 
 	/**
