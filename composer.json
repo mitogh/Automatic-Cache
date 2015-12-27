@@ -1,19 +1,33 @@
 {
   "name": "mitogh/on-cache-please",
   "description": "Storage a request automatically on a transient cache",
-  "require-dev": {
-    "squizlabs/php_codesniffer": "2.*",
-    "wp-coding-standards/wpcs": "dev-master"
-  },
-  "scripts": {
-    "post-install-cmd": [
-      "vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs/"
-    ]
-  },
+  "keywords": ["wordpress", "cache", "request"],
+  "homepage": "https://github.com/mitogh/On-Cache-Please",
+  "type": "library",
+  "licence": "MIT",
   "authors": [
     {
-      "name": "mitogh",
-      "email": "mitogh@gmail.com"
+      "name": "Crisoforo Gaspar Hernandez",
+      "email": "github@crisoforo.com"
     }
-  ]
+  ],
+  "require": {
+    "php": ">=5.3.0"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "2.*",
+    "wp-coding-standards/wpcs": "dev-master",
+    "phpdocumentor/phpdocumentor": "2.*"
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs/",
+      "./vendor/bin/phpcs --config-set default_standard ./codesniffer.ruleset.xml",
+      "./vendor/bin/phpcs --config-set show_progress 0",
+      "./vendor/bin/phpcs --config-set colors 1"
+    ],
+    "phpcs": [
+      "phpcs *.php"
+    ]
+  }
 }
