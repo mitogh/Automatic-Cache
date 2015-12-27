@@ -1,8 +1,8 @@
 # On Cache Please
 
-> Because programmers are to lazy to write code repeated code, this
- utility helps to avoid to review a transient before the creation it
- does that automatically.
+> Because programmers are to lazy to write repeated code, this
+ utility automatically storages the data of a callback in a transient to
+faster access the next time the data is accessed. 
 
 ## Description
 
