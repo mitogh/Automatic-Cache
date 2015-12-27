@@ -29,11 +29,9 @@ if ( ! function_exists( 'on_cache_please' ) ) {
 		));
 
 		$data = get_transient( $args['name'] );
-		if ( false === $data ) {
-			if ( is_callable( $args['callback'] ) ) {
-				$data = call_user_func( $args['callback'] );
-				set_transient( $args['name'], $data, $args['duration'] );
-			}
+		if ( false === $data && is_callable( $args['callback'] ) ) {
+			$data = call_user_func( $args['callback'] );
+			set_transient( $args['name'], $data, $args['duration'] );
 		}
 		return $data;
 	}
