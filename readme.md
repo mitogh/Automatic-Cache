@@ -31,6 +31,14 @@ To retrive the library from [packagist](https://packagist.org/packages/mitogh/on
 add the on-cache-please library as a dependency in your `composer.json`
 file.
 
+The other way is directly include the file: 
+
+```php
+include On-Cache-Please/src/OnCache.php;
+```
+
+Into your `functions.php` file in your theme or in your plugin.
+
 ## Methods and Properties
 
 Here are listed only the public methods that are available to be used
@@ -60,7 +68,7 @@ before execute the `callback` again and update the transient, there are
 few [few already defined](https://codex.wordpress.org/Transients_API#Using_Time_Constants).
 constants that migh help you.
 
-### Example
+**Example**
 
 ```php
 // This line is only useful if you installed the library with composer.
