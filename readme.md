@@ -34,7 +34,7 @@ file.
 The other way is directly include the file: 
 
 ```php
-include On-Cache-Please/src/OnCache.php;
+include 'On-Cache-Please/src/OnCache.php';
 ```
 
 Into your `functions.php` file in your theme or in your plugin.
@@ -70,9 +70,29 @@ constants that migh help you.
 
 **Example**
 
+In this example we retrieve the data from `http://codepen.io/jobs.json`
+and store the result in a transient that has a duration (by default of 1
+hour), so the next hour we are going to have the latest updated data
+wiouth having to make a request every time the page is loaded.   
+
+Library installed via `composer.json`  
+
 ```php
-// This line is only useful if you installed the library with composer.
 include './vendor/autoload.php';
+$args = array(
+    'name' => 'codepen_jobs',
+	'callback' => function(){
+		$url = 'http://codepen.io/jobs.json';
+		return wp_remote_retrieve_body( wp_remote_get( $url ) );
+	},
+);
+$jobs = mitogh\OnCache::please( $args );
+```
+
+Library installed manually:  
+
+```php
+include './On-Cache-Please/src/OnCache.php';
 $args = array(
     'name' => 'codepen_jobs',
 	'callback' => function(){
