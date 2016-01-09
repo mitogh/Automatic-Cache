@@ -30,11 +30,17 @@
     "phpdocumentor/phpdocumentor": "2.*"
   },
   "scripts": {
-    "post-update-cmd": [
+    "set-up-scripts": [
       "./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs/",
       "./vendor/bin/phpcs --config-set default_standard ./codesniffer.ruleset.xml",
       "./vendor/bin/phpcs --config-set show_progress 0",
       "./vendor/bin/phpcs --config-set colors 1"
+    ],
+    "post-install-cmd": [
+      "@set-up-scripts"
+    ],
+    "post-update-cmd": [
+      "@set-up-scripts"
     ],
     "phpcs": [
       "phpcs src/*.php"
